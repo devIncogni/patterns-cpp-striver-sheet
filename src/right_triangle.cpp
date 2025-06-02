@@ -8,4 +8,13 @@ void printNormalRightTriangle(int height) {
   }
 }
 
-int main() { printNormalRightTriangle(5); }
+void printNumberedRightTriangle(int height) {
+  for (int i = 0; i < height; ++i) {
+    for (int j = 0; j <= i; ++j) {
+      std::cout << j + 1;
+    }
+    std::cout << '\n';
+  }
+}
+
+int main() { printNumberedRightTriangle(5); }
