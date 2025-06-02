@@ -8,7 +8,7 @@ void printNormalRightTriangle(int height) {
   }
 }
 
-void printNumberedRightTriangle(int height) {
+void printColumnNumberedRightTriangle(int height) {
   for (int i = 0; i < height; ++i) {
     for (int j = 0; j <= i; ++j) {
       std::cout << j + 1;
@@ -17,4 +17,4 @@ void printNumberedRightTriangle(int height) {
   }
 }
 
-int main() { printNumberedRightTriangle(5); }
+int main() { printColumnNumberedRightTriangle(5); }
