@@ -26,4 +26,13 @@ void printRowNumberedRightTriangle(int height) {
   }
 }
 
-int main() { printRowNumberedRightTriangle(5); }
+void printInvertedRightTriangle(int height) {
+  for (int i = 0; i < height; ++i) {
+    for (int j = height; j > i; --j) {
+      std::cout << "*";
+    }
+    std::cout << '\n';
+  }
+}
+
+int main() { printInvertedRightTriangle(5); }
