@@ -35,4 +35,13 @@ void printInvertedRightTriangle(int height) {
   }
 }
 
-int main() { printInvertedRightTriangle(5); }
+void printInvColNumRightTriangle(int height) {
+  for (int i = 0; i < height; ++i) {
+    for (int j = height; j > i; --j) {
+      std::cout << height-j+1;
+    }
+    std::cout << '\n';
+  }
+}
+
+int main() { printInvColNumRightTriangle(5); }
