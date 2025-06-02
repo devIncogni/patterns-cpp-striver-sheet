@@ -17,4 +17,13 @@ void printColumnNumberedRightTriangle(int height) {
   }
 }
 
-int main() { printColumnNumberedRightTriangle(5); }
+void printRowNumberedRightTriangle(int height) {
+  for (int i = 0; i < height; ++i) {
+    for (int j = 0; j <= i; ++j) {
+      std::cout << i + 1;
+    }
+    std::cout << '\n';
+  }
+}
+
+int main() { printRowNumberedRightTriangle(5); }
