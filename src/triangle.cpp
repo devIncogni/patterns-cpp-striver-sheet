@@ -61,4 +61,13 @@ void printTwoJointTriangles(int height) {
   }
 }
 
-int main() { printTwoJointTriangles(5); }
+void printRotatedTriangle(int height) {
+  for (int i{0}; i < 2 * height; ++i) {
+    int numStars = i <= height ? i : 2 * height - i;
+    for (int j{0}; j < numStars; ++j) {
+      std::cout << "*";
+    }
+    std::cout << '\n';
+  }
+}
+int main() { printRotatedTriangle(5); }
