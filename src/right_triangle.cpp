@@ -69,4 +69,14 @@ void printTwoRtTriangleFaceEachOther(int height) {
     std::cout << "\n";
   }
 }
-int main() { printTwoRtTriangleFaceEachOther(5); }
+
+void printTriangleWithNumberedElements(int height) {
+  int printNum{0};
+  for (int i{0}; i < height; ++i) {
+    for (int j{0}; j < i; ++j) {
+      std::cout << ++printNum << " ";
+    }
+    std::cout << '\n';
+  }
+}
+int main() { printTriangleWithNumberedElements(15); }
