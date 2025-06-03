@@ -91,4 +91,15 @@ void printTriangleWithLetterElements(int height) {
   }
 }
 
-int main() { printTriangleWithLetterElements(28); }
+void printInvertedTriangleWithLetterElements(int height) {
+  for (int i{0}; i < height; ++i) {
+    char printChar{'A'};
+    for (int j{height}; j > i; --j) {
+      std::cout << printChar << " ";
+      printChar = printChar >= 'Z' ? 'A' : printChar + 1;
+    }
+    std::cout << '\n';
+  }
+}
+
+int main() { printInvertedTriangleWithLetterElements(5); }
