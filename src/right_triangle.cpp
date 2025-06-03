@@ -73,10 +73,22 @@ void printTwoRtTriangleFaceEachOther(int height) {
 void printTriangleWithNumberedElements(int height) {
   int printNum{0};
   for (int i{0}; i < height; ++i) {
-    for (int j{0}; j < i; ++j) {
+    for (int j{0}; j <= i; ++j) {
       std::cout << ++printNum << " ";
     }
     std::cout << '\n';
   }
 }
-int main() { printTriangleWithNumberedElements(15); }
+
+void printTriangleWithLetterElements(int height) {
+  for (int i{0}; i < height; ++i) {
+    char printChar{'A'};
+    for (int j{0}; j <= i; ++j) {
+      std::cout << printChar << " ";
+      printChar = printChar >= 'Z' ? 'A' : printChar + 1;
+    }
+    std::cout << '\n';
+  }
+}
+
+int main() { printTriangleWithLetterElements(28); }
