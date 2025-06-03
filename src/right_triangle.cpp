@@ -117,7 +117,7 @@ void printHypotenuseLetteredRightTriangle(int height) {
     char hypotenuseChar{static_cast<char>('A' + height - 1)};
     for (int j{0}; j <= i; ++j) {
       char currentCharacter{static_cast<char>(hypotenuseChar - i + j)};
-      std::cout << currentCharacter;
+      std::cout << currentCharacter << " ";
     }
     std::cout << '\n';
   }

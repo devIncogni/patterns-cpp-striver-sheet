@@ -1,4 +1,5 @@
 #include <cmath>
+#include <cstdlib>
 #include <iostream>
 void printTriangle(int height) {
   int midIndex{static_cast<int>(std::ceil((2 * height + 1) / 2))};
@@ -94,4 +95,34 @@ void printTriangleWithLetters(int height) {
     std::cout << "\n";
   }
 }
-int main() { printTriangleWithLetters(5); }
+
+void printHollowJointTriangles(int height) {
+
+  int breakPoint = height;
+
+  for (int i{0}; i < 2 * height + 1; ++i) {
+
+    // First set of stars
+    if (height == i) {
+      continue;
+    }
+    for (int j{0}; j < std::abs(height - i); ++j) {
+      std::cout << "*";
+    }
+
+    // Spaces
+    int numSpace = i < breakPoint ? 2 * i : 2 * i - 4 * std::abs(height - i);
+
+    for (int j{0}; j < numSpace; ++j) {
+      std::cout << " ";
+    }
+
+    // Second set of stars
+    for (int j{std::abs(height - i) + numSpace}; j < 2 * height; ++j) {
+      std::cout << "*";
+    }
+    std::cout << '\n';
+  }
+}
+
+int main() { printHollowJointTriangles(5); }
