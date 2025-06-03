@@ -1,5 +1,4 @@
 #include <cmath>
-#include <exception>
 #include <iostream>
 void printTriangle(int height) {
   int midIndex{static_cast<int>(std::ceil((2 * height + 1) / 2))};

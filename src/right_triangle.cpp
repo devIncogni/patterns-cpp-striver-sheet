@@ -54,4 +54,19 @@ void printBinaryRightTriangle(int height) {
     std::cout << '\n';
   }
 }
-int main() { printBinaryRightTriangle(5); }
+
+void printTwoRtTriangleFaceEachOther(int height) {
+  for (int i{0}; i < height; ++i) {
+    int deviation{(i + 1)};
+    for (int j{0}; j < 2 * height; ++j) {
+      if (j < deviation || j > 2 * height - 1 - deviation) {
+        int printNo{j < deviation ? j + 1 : 2 * height - j};
+        std::cout << printNo;
+      } else {
+        std::cout << " ";
+      }
+    }
+    std::cout << "\n";
+  }
+}
+int main() { printTwoRtTriangleFaceEachOther(5); }
