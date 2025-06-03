@@ -102,4 +102,14 @@ void printInvertedTriangleWithLetterElements(int height) {
   }
 }
 
-int main() { printInvertedTriangleWithLetterElements(5); }
+void printTriangleWithRowLetterElements(int height) {
+  for (int i{0}; i < height; ++i) {
+    char printChar{static_cast<char>('A' + i)};
+    for (int j{0}; j <= i; ++j) {
+      std::cout << printChar;
+    }
+    std::cout << '\n';
+  }
+}
+
+int main() { printTriangleWithRowLetterElements(5); }
