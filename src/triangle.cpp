@@ -1,4 +1,5 @@
 #include <cmath>
+#include <exception>
 #include <iostream>
 void printTriangle(int height) {
   int midIndex{static_cast<int>(std::ceil((2 * height + 1) / 2))};
@@ -36,4 +37,28 @@ void printInvertedTriangle(int height) {
   }
 }
 
-int main() { printInvertedTriangle(5); }
+void printTwoJointTriangles(int height) {
+  int midIndex = std::ceil((2 * height + 1) / 2);
+
+  for (int i{0}; i < 2 * height; ++i) {
+    int currentPrintNumber =
+        i < height ? (2 * i + 1) : (2 * i + 1) - 2 * (2 * (i - height) + 1);
+    // i > height logic:
+    // 2i+1 increases 2 stars in every step. But after midpoint is achieved, we
+    // want net decrement of 2 stars in every step. Hence we subtract a total of
+    // 4 stars. They account for the 2 stars added by 2i+1 and 2 extra stars
+    // that were to be removed for the inverted triangle.
+
+    int swing = currentPrintNumber / 2;
+    for (int j{0}; j < 2 * height + 1; ++j) {
+      if (j >= midIndex - swing && j <= midIndex + swing) {
+        std::cout << "x";
+      } else {
+        std::cout << " ";
+      }
+    }
+    std::cout << '\n';
+  }
+}
+
+int main() { printTwoJointTriangles(5); }
