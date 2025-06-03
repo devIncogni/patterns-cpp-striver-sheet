@@ -69,4 +69,29 @@ void printRotatedTriangle(int height) {
     std::cout << '\n';
   }
 }
-int main() { printRotatedTriangle(5); }
+
+void printTriangleWithLetters(int height) {
+  int midIndex{static_cast<int>(std::ceil((2 * height + 1) / 2))};
+
+  for (int i{0}; i < height; ++i) {
+
+    int currentPrintNumber{2 * i + 1};
+    int swing{currentPrintNumber / 2};
+
+    for (int j{0}; j < 2 * height + 1; ++j) {
+      if (j >= midIndex - swing && j <= midIndex + swing) {
+
+        char currentMidElement{static_cast<char>('A' + swing)};
+        char printElement{static_cast<char>(
+            j <= midIndex ? currentMidElement - (midIndex - j)
+                          : currentMidElement - (j - midIndex))};
+
+        std::cout << printElement;
+      } else {
+        std::cout << " ";
+      }
+    }
+    std::cout << "\n";
+  }
+}
+int main() { printTriangleWithLetters(5); }
