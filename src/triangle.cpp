@@ -111,18 +111,45 @@ void printHollowJointTriangles(int height) {
     }
 
     // Spaces
-    int numSpace = i < breakPoint ? 2 * i : 2 * i - 4 * std::abs(height - i);
+    int numOfSpaces = i < breakPoint ? 2 * i : 2 * i - 4 * std::abs(height - i);
 
-    for (int j{0}; j < numSpace; ++j) {
+    for (int j{0}; j < numOfSpaces; ++j) {
       std::cout << " ";
     }
 
     // Second set of stars
-    for (int j{std::abs(height - i) + numSpace}; j < 2 * height; ++j) {
+    for (int j{std::abs(height - i) + numOfSpaces}; j < 2 * height; ++j) {
       std::cout << "*";
     }
     std::cout << '\n';
   }
 }
 
-int main() { printHollowJointTriangles(5); }
+void printHollowJointTrianglesAtTip(int height) {
+  int spaces = 2 * height - 2;
+  int stars = 2;
+
+  for (int i{1}; i <= 2 * height - 1; ++i) {
+
+    for (int j{1}; j <= stars / 2; ++j) {
+      std::cout << "*";
+    }
+    for (int j{1}; j <= spaces; ++j) {
+      std::cout << "a";
+    }
+    for (int j{1}; j <= stars / 2; ++j) {
+      std::cout << "*";
+    }
+
+    if (i < height) {
+      spaces -= 2;
+      stars += 2;
+    } else {
+      spaces += 2;
+      stars -= 2;
+    }
+    std::cout << '\n';
+  }
+}
+
+int main() { printHollowJointTrianglesAtTip(5); }
