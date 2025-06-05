@@ -1,5 +1,4 @@
-
-#include <cmath>
+#include "./rectangular.h"
 #include <iostream>
 void printNormalRectangle(int height, int width) {
   for (int i = 0; i < height; ++i) {
@@ -54,6 +53,3 @@ void printSquareWithLayerNumbers(int layers) {
     std::cout << '\n';
   }
 }
-
-// Testing purposes only main() function
-int main() { printSquareWithLayerNumbers(5); }

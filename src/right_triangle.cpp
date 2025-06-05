@@ -1,4 +1,6 @@
+#include "./right_triangle.h"
 #include <iostream>
+
 void printNormalRightTriangle(int height) {
   for (int i = 0; i < height; ++i) {
     for (int j = 0; j <= i; ++j) {
@@ -122,5 +124,3 @@ void printHypotenuseLetteredRightTriangle(int height) {
     std::cout << '\n';
   }
 }
-
-int main() { printHypotenuseLetteredRightTriangle(5); }

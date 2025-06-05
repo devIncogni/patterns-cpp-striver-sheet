@@ -1,3 +1,4 @@
+#include "./triangle.h"
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
@@ -151,5 +152,3 @@ void printHollowJointTrianglesAtTip(int height) {
     std::cout << '\n';
   }
 }
-
-int main() { printHollowJointTrianglesAtTip(5); }
